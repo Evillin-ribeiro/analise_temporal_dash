@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard NIA</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Segoe UI, Arial, sans-serif;
+
+            background-image: url("/sua_pasta/img/sua_img.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.45);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .box {
+            background: #FFFFFF;
+            width: 420px;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .box h2 {
+            margin: 0;
+            color: #2C3E50;
+        }
+
+        .arquivo-area {
+            border: 2px dashed #CCC;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #AAA;
+            margin: 0;
+        }
+
+        .arquivo-area strong {
+            color: #555;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .erro {
+            color: #C0392B;
+            font-size: 13px;
+        }
+
+        .botoes {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #5e113f;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            display: inline-flex;       
+            align-items: center;        
+            justify-content: center;    
+            line-height: 1;             
+            font-family: inherit;       
+            text-decoration: none;
+            appearance: none;           
+        }
+
+        .btn:hover {
+            background: #faba00;
+            color: #000;
+        }
+
+        .btn-sair {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    
+        background: #ffffff;
+        color: #5e113f;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 2px solid #5e113f;
+    
+        transition: all 0.2s ease-in-out;
+    }
+    
+    .btn-sair:hover {
+        background: #faba00;
+        color: #000;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <a href="/logout" class="btn-sair">Sair</a>
+
+<form class="box"
+      method="POST"
+      enctype="multipart/form-data"
+      action="/upload">
+
+    <h2>Dashboard NIA</h2>
+
+    {% if erro %}
+        <div class="erro">{{ erro }}</div>
+    {% endif %}
+
+    <div class="arquivo-area" id="nome-arquivo">
+        {% if nome_arquivo %}
+            <strong>{{ nome_arquivo }}</strong>
+        {% else %}
+            Aguardando arquivo
+        {% endif %}
+    </div>
+    
+    <input
+        id="arquivo"
+        type="file"
+        name="arquivo"
+        accept=".xlsx,.xls"
+        onchange="mostrarNomeArquivo(this)"
+    >
+
+    <div class="botoes">
+        <label for="arquivo" class="btn">
+            Selecionar arquivo
+        </label>
+
+        <button type="submit" class="btn">
+            Enviar para análise
+        </button>
+
+        <a href="/upload" class="btn">
+            Limpar arquivo selecionado
+        </a>
+    </div>
+
+</form>
+    
+<script>
+function mostrarNomeArquivo(input) {
+    const area = document.getElementById("nome-arquivo");
+
+    if (input.files.length > 0) {
+        area.innerHTML = "<strong>" + input.files[0].name + "</strong>";
+    } else {
+        area.innerHTML = "Aguardando arquivo";
+    }
+}
+</script>
+    
+</body>
+</html>

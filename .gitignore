@@ -1,0 +1,37 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ===== Ambientes Virtuais =====
+venv/
+.env/
+.env.*
+.envrc
+
+# ===== Dados sensíveis =====
+uploads/
+flask_session/
+*.xlsx
+*.xls
+*.csv
+processado_*.xlsx
+processado_*.xls
+
+# ===== Notebooks =====
+notebooks/
+.ipynb_checkpoints/
+*.ipynb
+
+# ===== Logs e arquivos de execução =====
+*.log
+*.pid
+
+# ====== Container ==========
+Dockerfile
+docker-compose.yml
+.dockerignore
+docker/
+*.tar
+docker-data/
+docker-volume/

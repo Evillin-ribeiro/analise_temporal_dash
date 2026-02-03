@@ -1,0 +1,15 @@
+Flask
+Flask-Login
+Flask-Session
+Werkzeug
+
+dash
+plotly
+
+pandas
+numpy
+
+openpyxl
+html5lib
+lxml
+python-dateutil
