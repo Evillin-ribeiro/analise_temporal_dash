@@ -8,7 +8,6 @@ from datetime import datetime
 def processar_excel(caminho_arquivo: str) -> str:
     caminho_arquivo = Path(caminho_arquivo)
 
-#Abrindo o arquivo
     ext = caminho_arquivo.suffix.replace(".", "").lower()
 
     if ext == "xlsx":
@@ -22,9 +21,9 @@ def processar_excel(caminho_arquivo: str) -> str:
     else:
         raise ValueError("Formato de arquivo não suportado")
 
-#Conversão da coluna criado 
     def converter_criado(valor):
         if pd.isna(valor):
+            
             return pd.NaT
 
         if isinstance(valor, (pd.Timestamp, datetime)):
@@ -44,55 +43,54 @@ def processar_excel(caminho_arquivo: str) -> str:
         return pd.to_datetime(valor, errors='coerce', dayfirst=True)
 
 
-    df["Criado"] = df["Criado"].apply(converter_criado)
+    df["[Setor] Etapa - X1"] = df["[Setor] Etapa - X1"].apply(converter_criado)
 
-#Colunas da desocupação
-    colunas_desocupacao = [
-        "[Desocupação] Etapa - Integração",
-        "[Desocupação] Etapa - Aviso de Desocupação",
-        "[Desocupação] Etapa - Chaves Entregues",
-        "[Desocupação] Etapa - Vistoria Agendada",
-        "[Desocupação] Etapa - Vistoria Cancelada",
-        "[Desocupação] Etapa - Vistoria Sem Agendamento",
-        "[Desocupação] Etapa - Vistoria Parcial",
-        "[Desocupação] Etapa - Comparativo da Vistoria",
-        "[Desocupação] Etapa - Orçamento",
-        "[Desocupação] Etapa - Vistoria Com Pendência",
-        "[Desocupação] Etapa - Orçamento Aprovado",
-        "[Desocupação] Etapa - Análise de Contestação",
-        "[Desocupação] Etapa - Reparo Estrutural",
-        "[Desocupação] Etapa - Inquilino Irá Executar",
-        "[Desocupação] Etapa - Revistoria",
-        "[Desocupação] Etapa - Orçamento da Revistoria",
-        "[Desocupação] Etapa - Revistoria com Pendência",
-        "[Desocupação] Etapa - Roque Serviços",
-        "[Desocupação] Etapa - Imóvel Sem Pendências",
-        "[Desocupação] Etapa - Fechamento",
-        "[Desocupação] Etapa - Envio de Débitos Finais",
-        "[Desocupação] Etapa - Pendente Roque Serviços",
-        "[Desocupação] Etapa - Finalizado Adimplente",
-        "[Desocupação] Etapa - Finalizado Inadimplente",
-        "[Desocupação] Etapa - Desistiu da Desocupação",
-        "[Desocupação] Etapa - Em Acordo",
+    colunas_processo_interno = [
+        "[Setor] Etapa - X1",
+        "[Setor] Etapa - X2",
+        "[Setor] Etapa - X3",
+        "[Setor] Etapa - X4",
+        "[Setor] Etapa - X5",
+        "[Setor] Etapa - X6",
+        "[Setor] Etapa - X7",
+        "[Setor] Etapa - X8",
+        "[Setor] Etapa - X9",
+        "[Setor] Etapa - X10",
+        "[Setor] Etapa - X11",
+        "[Setor] Etapa - X12",
+        "[Setor] Etapa - X13",
+        "[Setor] Etapa - X14",
+        "[Setor] Etapa - X15",
+        "[Setor] Etapa - X16",
+        "[Setor] Etapa - X17",
+        "[Setor] Etapa - X18",
+        "[Setor] Etapa - X19",
+        "[Setor] Etapa - X20",
+        "[Setor] Etapa - X21",
+        "[Setor] Etapa - X22",
+        "[Setor] Etapa - X23",
+        "[Setor] Etapa - X24",
+        "[Setor] Etapa - X25",
+        "[Setor] Etapa - X26",
     ]
 
-    for col in colunas_desocupacao:
+    for col in colunas_processo_interno:
         if col in df.columns:
             df[col] = pd.to_datetime(df[col], errors="coerce", dayfirst=True)
     
     colunas_inicio = [
-        '[Desocupação] Etapa - Chaves Entregues',
-        '[Desocupação] Etapa - Aviso de Desocupação',
-        'Criado'
+        '[Setor] Etapa - X1',
+        '[Setor] Etapa - X2',
+        '[Setor] Etapa - X3'
     ]
     
     df['Data_inicio_desocupacao'] = df[colunas_inicio].bfill(axis=1).iloc[:, 0]
     
     colunas_fim = [
-        '[Desocupação] Etapa - Envio de Débitos Finais',
-        '[Desocupação] Etapa - Finalizado Adimplente',
-        '[Desocupação] Etapa - Finalizado Inadimplente',
-        '[Desocupação] Etapa - Em Acordo'
+        '[Setor] Etapa - X23',
+        '[Setor] Etapa - X24',
+        '[Setor] Etapa - X25',
+        '[Setor] Etapa - X26'
     ]
     
     df['Data_fim_real'] = df[colunas_fim].bfill(axis=1).iloc[:, 0]
@@ -149,8 +147,8 @@ def processar_excel(caminho_arquivo: str) -> str:
     
     df_final = pd.concat(
         [
-            df[['Código do imóvel', 'Contato', 'Criado']],
-            df[colunas_desocupacao],
+            df[['[Setor] Etapa - XX', '[Setor] Etapa - XX', '[Setor] Etapa - XX']],
+            df[colunas_processo_interno],
             df[
                 [
                     'Data_inicio_desocupacao',

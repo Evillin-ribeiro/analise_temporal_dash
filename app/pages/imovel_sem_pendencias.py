@@ -4,16 +4,16 @@ from dash import html, dcc
 from dash.dash_table import DataTable
 
 COLUNAS_TABELA_SEM_PENDENCIAS = [
-    'Código do imóvel',
-    'Contato',
+    '[Setor] Etapa - XX',
+    '[Setor] Etapa - XX',
     'Data_inicio_desocupacao',
-    '[Desocupação] Etapa - Imóvel Sem Pendências',
+    '[Setor] Etapa - X10',
     'Data_fim_desocupacao',
     'Finalizado'
 ]
 
 def filtrar_dataframe_sem_pendencias(df, filtro):
-    coluna_fase = '[Desocupação] Etapa - Imóvel Sem Pendências'
+    coluna_fase = '[Setor] Etapa - X10'
 
     if filtro == "passaram_sem_pendencia":
         df_filtrado = df[df[coluna_fase].notna()]

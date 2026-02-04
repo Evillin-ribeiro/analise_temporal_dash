@@ -4,8 +4,8 @@ from dash import dcc, html, dash_table
 import plotly.graph_objects as go
 
 COLUNAS_TABELA_MEDIA_MENSAL =[
-    'Código do imóvel',
-    'Contato',
+    '[Setor] Etapa - XX',
+    '[Setor] Etapa - XX',
     'Data_inicio_desocupacao',
     'Data_fim_desocupacao',
     'Finalizado'

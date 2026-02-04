@@ -3,10 +3,10 @@ import plotly.graph_objects as go
 from dash import html, dcc, dash_table
 
 COLUNAS_TABELA_LIBERACAO = [
-    'Código do imóvel',
-    'Contato',
+    '[Setor] Etapa - XX'
+    '[Setor] Etapa - XX'
     'Data_inicio_desocupacao',
-    '[Desocupação] Etapa - Imóvel Sem Pendências',
+    '[Setor] Etapa - X10',
     'Data_fim_desocupacao',
     'Tempo_total_desocupacao',
     'Finalizado'
@@ -15,45 +15,45 @@ COLUNAS_TABELA_LIBERACAO = [
 def processar_dados_liberacao(df):
 
     antes_vistoria = [
-        'Criado',
-        '[Desocupação] Etapa - Integração',
-        '[Desocupação] Etapa - Aviso de Desocupação',
-        '[Desocupação] Etapa - Chaves Entregues'
+        '[Setor] Etapa - XX',
+        '[Setor] Etapa - X1',
+        '[Setor] Etapa - X2',
+        '[Setor] Etapa - X3'
     ]
 
     depois_vistoria = [
-        '[Desocupação] Etapa - Vistoria Agendada',
-        '[Desocupação] Etapa - Vistoria Cancelada',
-        '[Desocupação] Etapa - Vistoria Sem Agendamento',
-        '[Desocupação] Etapa - Vistoria Parcial',
-        '[Desocupação] Etapa - Comparativo da Vistoria',
-        '[Desocupação] Etapa - Orçamento'
+        '[Setor] Etapa - X4',
+        '[Setor] Etapa - X5',
+        '[Setor] Etapa - X6',
+        '[Setor] Etapa - X7',
+        '[Setor] Etapa - X8',
+        '[Setor] Etapa - X9'
     ]
 
     ordem_fases = [
-        '[Desocupação] Etapa - Roque Serviços',
-        '[Desocupação] Etapa - Revistoria com Pendência',
-        '[Desocupação] Etapa - Orçamento da Revistoria',
-        '[Desocupação] Etapa - Revistoria',
-        '[Desocupação] Etapa - Inquilino Irá Executar',
-        '[Desocupação] Etapa - Reparo Estrutural',
-        '[Desocupação] Etapa - Análise de Contestação',
-        '[Desocupação] Etapa - Orçamento Aprovado',
-        '[Desocupação] Etapa - Vistoria Com Pendência',
-        '[Desocupação] Etapa - Orçamento',
-        '[Desocupação] Etapa - Comparativo da Vistoria',
-        '[Desocupação] Etapa - Vistoria Parcial',
-        '[Desocupação] Etapa - Vistoria Sem Agendamento',
-        '[Desocupação] Etapa - Vistoria Cancelada',
-        '[Desocupação] Etapa - Vistoria Agendada',
-        '[Desocupação] Etapa - Chaves Entregues',
-        '[Desocupação] Etapa - Aviso de Desocupação',
-        '[Desocupação] Etapa - Integração',
-        'Criado'
+        '[Setor] Etapa - X10',
+        '[Setor] Etapa - X11',
+        '[Setor] Etapa - X12',
+        '[Setor] Etapa - X13',
+        '[Setor] Etapa - X14',
+        '[Setor] Etapa - X15',
+        '[Setor] Etapa - X16',
+        '[Setor] Etapa - X17',
+        '[Setor] Etapa - X18',
+        '[Setor] Etapa - X19',
+        '[Setor] Etapa - X20',
+        '[Setor] Etapa - X21',
+        '[Setor] Etapa - X22',
+        '[Setor] Etapa - X23',
+        '[Setor] Etapa - X24',
+        '[Setor] Etapa - X25',
+        '[Setor] Etapa - X26',
+        '[Setor] Etapa - X27',
+        '[Setor] Etapa - XX'
     ]
 
     df_filtrado = df[
-        df['[Desocupação] Etapa - Imóvel Sem Pendências'].notna()
+        df['[Setor] Etapa - X10'].notna()
     ].copy()
 
     def encontrar_fase_mais_avancada(linha):

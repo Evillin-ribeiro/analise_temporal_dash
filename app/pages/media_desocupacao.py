@@ -4,8 +4,8 @@ from dash import dcc, html, dash_table
 import plotly.graph_objects as go
 
 COLUNAS_TABELA_MEDIA_DESOCUPACAO = [
-    'Código do imóvel', 
-    'Contato',
+    '[Setor] Etapa - XX', 
+    '[Setor] Etapa - XX',
     'Data_inicio_desocupacao',
     'Data_fim_desocupacao',
     'Tempo_total_desocupacao',
@@ -17,47 +17,42 @@ def criar_layout_media_desocupacao(df: pd.DataFrame):
     desocupacao = df_copia[df_copia['Finalizado'] == True].copy()
     
     fases_desocupacao = [
-        '[Desocupação] Etapa - Aviso de Desocupação',
-        '[Desocupação] Etapa - Chaves Entregues',
-        '[Desocupação] Etapa - Comparativo da Vistoria',
-        '[Desocupação] Etapa - Vistoria Com Pendência',
-        '[Desocupação] Etapa - Análise de Contestação',
-        '[Desocupação] Etapa - Reparo Estrutural',
-        '[Desocupação] Etapa - Inquilino Irá Executar',
-        '[Desocupação] Etapa - Revistoria com Pendência',
-        '[Desocupação] Etapa - Imóvel Sem Pendências',
-        '[Desocupação] Etapa - Fechamento',
+        '[Setor] Etapa - X1',
+        '[Setor] Etapa - X2',
+        '[Setor] Etapa - X3',
+        '[Setor] Etapa - X5',
+        '[Setor] Etapa - X10',
+        '[Setor] Etapa - X11',
+        '[Setor] Etapa - X12',
+        '[Setor] Etapa - X13',
+        '[Setor] Etapa - X15', 
+        '[Setor] Etapa - X16'
     ]
     
     todas_fases = [
-        '[Desocupação] Etapa - Integração',
-        '[Desocupação] Etapa - Vistoria Sem Agendamento',
-        '[Desocupação] Etapa - Vistoria Cancelada',
-        '[Desocupação] Etapa - Vistoria Parcial',
-        '[Desocupação] Etapa - Orçamento',
-        '[Desocupação] Etapa - Orçamento Aprovado',
-        '[Desocupação] Etapa - Revistoria',
-        '[Desocupação] Etapa - Orçamento da Revistoria',
-        '[Desocupação] Etapa - Roque Serviços',
-        '[Desocupação] Etapa - Pendente Roque Serviços',
-        '[Desocupação] Etapa - Envio de Débitos Finais',
-        '[Desocupação] Etapa - Finalizado Adimplente',
-        '[Desocupação] Etapa - Finalizado Inadimplente',
-        '[Desocupação] Etapa - Desistiu da Desocupação',
-        '[Desocupação] Etapa - Em Acordo'
+        '[Setor] Etapa - X1',
+        '[Setor] Etapa - X2',
+        '[Setor] Etapa - X3',
+        '[Setor] Etapa - X5',
+        '[Setor] Etapa - X10',
+        '[Setor] Etapa - X11',
+        '[Setor] Etapa - X12',
+        '[Setor] Etapa - X13',
+        '[Setor] Etapa - X15', 
+        '[Setor] Etapa - X16'
     ]
 
     mapa_fases_curtas = {
-        '[Desocupação] Etapa - Aviso de Desocupação': 'Aviso de Desocupação',
-        '[Desocupação] Etapa - Chaves Entregues': 'Chaves Entregues',
-        '[Desocupação] Etapa - Comparativo da Vistoria': 'Comparativo da Vistoria',
-        '[Desocupação] Etapa - Vistoria Com Pendência': 'Vistoria com Pendência',
-        '[Desocupação] Etapa - Análise de Contestação': 'Análise de Contestação',
-        '[Desocupação] Etapa - Reparo Estrutural': 'Reparo Estrutural',
-        '[Desocupação] Etapa - Inquilino Irá Executar': 'Inquilino Irá Executar',
-        '[Desocupação] Etapa - Revistoria com Pendência': 'Revistoria com Pendência',
-        '[Desocupação] Etapa - Imóvel Sem Pendências': 'Imóvel Sem Pendências',
-        '[Desocupação] Etapa - Fechamento': 'Fechamento'
+        "Etapa X": "[Setor] Etapa - X1",
+        "Etapa Y": "[Setor] Etapa - X2",
+        "Etapa C": "[Setor] Etapa - X4",
+        "Etapa D": "[Setor] Etapa - X5",
+        "Etapa E": "[Setor] Etapa - X10",
+        "Etapa W": "[Setor] Etapa - X11",
+        "Etapa XX": "[Setor] Etapa - X12", 
+        "Etapa XY": "[Setor] Etapa - X13", 
+        "Etapa F": "[Setor] Etapa - X15",
+        "Etapa M": "[Setor] Etapa - X16"
     }
 
     def calcular_tempo_na_fase(row, fase_inicio, fases_desocupacao, todas_fases):

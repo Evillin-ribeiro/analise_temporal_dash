@@ -4,8 +4,8 @@ from dash import html, dcc
 from dash.dash_table import DataTable
 
 COLUNAS_TABELA_NAO_FINALIZADAS = [
-    'Código do imóvel',
-    'Contato',
+    '[Setor] Etapa - XX',
+    '[Setor] Etapa - XX',
     'Data_inicio_desocupacao',
     'Data_fim_desocupacao',
     'Finalizado'
@@ -15,7 +15,7 @@ def filtrar_dataframe_nao_finalizadas(df, filtro):
     if filtro == "andamento":
         return df[df['Desocupacoes_em_andamento'] == True], "Desocupações em Andamento"
     elif filtro == "sem_automacao":
-        return df[df['Desocupacao_nao_finalizada'] == True], "Desocupações sem automação no NIA"
+        return df[df['Desocupacao_nao_finalizada'] == True], "Desocupações sem automação no sistema XX"
     else:
         return df.copy(), "Total Desocupações Não Finalizadas"
 
@@ -73,7 +73,7 @@ def criar_grafico_nao_finalizadas(VALORES_NF, LABELS_NF, CORES_NF, PULL_NF, tota
         texto_legenda = (
             f"<b>Total de células analisadas:</b> {total}<br>"
             f"<b>Desocupações em andamento:</b> {VALORES_NF['todos'][0]}<br>"
-            f"<b>Desocupações sem automação no NIA:</b> {VALORES_NF['todos'][1]}"
+            f"<b>Desocupações sem automação no sistema XX:</b> {VALORES_NF['todos'][1]}"
         )
     elif filtro == "finalizadas":
         x_annotation = 0.85
@@ -107,31 +107,32 @@ def layout_nao_finalizadas(df):
     nao_finalizados = df[df['Finalizado'] == False].copy()
 
     cols_paramentro = [
-        '[Desocupação] Etapa - Aviso de Desocupação',
-        '[Desocupação] Etapa - Chaves Entregues',
-        '[Desocupação] Etapa - Vistoria Agendada',
-        '[Desocupação] Etapa - Vistoria Cancelada',
-        '[Desocupação] Etapa - Vistoria Sem Agendamento',
-        '[Desocupação] Etapa - Vistoria Parcial',
-        '[Desocupação] Etapa - Comparativo da Vistoria',
-        '[Desocupação] Etapa - Orçamento',
-        '[Desocupação] Etapa - Vistoria Com Pendência',
-        '[Desocupação] Etapa - Orçamento Aprovado',
-        '[Desocupação] Etapa - Análise de Contestação',
-        '[Desocupação] Etapa - Reparo Estrutural',
-        '[Desocupação] Etapa - Inquilino Irá Executar',
-        '[Desocupação] Etapa - Revistoria',
-        '[Desocupação] Etapa - Orçamento da Revistoria',
-        '[Desocupação] Etapa - Revistoria com Pendência',
-        '[Desocupação] Etapa - Roque Serviços',
-        '[Desocupação] Etapa - Imóvel Sem Pendências',
-        '[Desocupação] Etapa - Fechamento',
-        '[Desocupação] Etapa - Envio de Débitos Finais',
-        '[Desocupação] Etapa - Pendente Roque Serviços',
-        '[Desocupação] Etapa - Finalizado Adimplente',
-        '[Desocupação] Etapa - Finalizado Inadimplente',
-        '[Desocupação] Etapa - Desistiu da Desocupação',
-        '[Desocupação] Etapa - Em Acordo'
+        "[Setor] Etapa - X1",
+        "[Setor] Etapa - X2",
+        "[Setor] Etapa - X3",
+        "[Setor] Etapa - X4",
+        "[Setor] Etapa - X5",
+        "[Setor] Etapa - X6",
+        "[Setor] Etapa - X7",
+        "[Setor] Etapa - X8",
+        "[Setor] Etapa - X9",
+        "[Setor] Etapa - X10",
+        "[Setor] Etapa - X11",
+        "[Setor] Etapa - X12",
+        "[Setor] Etapa - X13",
+        "[Setor] Etapa - X14",
+        "[Setor] Etapa - X15",
+        "[Setor] Etapa - X16",
+        "[Setor] Etapa - X17",
+        "[Setor] Etapa - X18",
+        "[Setor] Etapa - X19",
+        "[Setor] Etapa - X20",
+        "[Setor] Etapa - X21",
+        "[Setor] Etapa - X22",
+        "[Setor] Etapa - X23",
+        "[Setor] Etapa - X24",
+        "[Setor] Etapa - X25",
+        "[Setor] Etapa - X26"
     ]
 
     def verificar_etapa(row):
@@ -156,10 +157,10 @@ def layout_nao_finalizadas(df):
     LABELS_NF = {
         "todos": [
             "Desocupações em Andamento",
-            "Desocupações sem Automação no NIA"
+            "Desocupações sem Automação no sistema XX"
         ],
         "andamento": ["Desocupações em Andamento"],
-        "sem_automacao": ["Desocupações sem Automação no NIA"]
+        "sem_automacao": ["Desocupações sem Automação no sistema XX"]
     }
 
     CORES_NF = {
@@ -206,7 +207,7 @@ def layout_nao_finalizadas(df):
             options=[
                 {"label": "Todos", "value": "todos"},
                 {"label": "Desocupações em Andamento", "value": "andamento"},
-                {"label": "Desocupações sem Automação no NIA", "value": "sem_automacao"},
+                {"label": "Desocupações sem Automação no sistema XX", "value": "sem_automacao"},
             ],
             style={"width": "420px", "marginBottom": "20px"}
         ),

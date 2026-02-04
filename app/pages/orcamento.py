@@ -4,55 +4,55 @@ from dash import html, dcc, html, dash_table
 import plotly.graph_objects as go
 
 COLUNAS_FIXA_ORCAMENTO = [
-    'Código do imóvel',
-    'Contato'
+    '[Setor] Etapa - XX',
+    '[Setor] Etapa - XX'
 ]
 
 COLUNAS_ETAPAS_ORCAMENTO = [
-    '[Desocupação] Etapa - Orçamento',
-    '[Desocupação] Etapa - Orçamento da Revistoria'
+    '[Setor] Etapa - X10',
+    '[Setor] Etapa - X11'
 ]
 
 MAPA_FASE_CURTA_PARA_ORCAMENTO = {
-    "Orçamento": "[Desocupação] Etapa - Orçamento",
-    "Orçamento da Revistoria": "[Desocupação] Etapa - Orçamento da Revistoria"
+    "[Setor] Etapa - X10": "Etapa - X10",
+    "[Setor] Etapa - X11": "Etapa - X11"
 }
 
 fases_orcamento = [
-    '[Desocupação] Etapa - Orçamento',
-    '[Desocupação] Etapa - Orçamento da Revistoria'
+    '[Setor] Etapa - X10': 'Etapa - X10',
+    '[Setor] Etapa - X11': 'Etapa - X11'
 ]
 
 todas_fases = [
-    '[Desocupação] Etapa - Integração',
-    '[Desocupação] Etapa - Aviso de Desocupação',
-    '[Desocupação] Etapa - Chaves Entregues',
-    '[Desocupação] Etapa - Vistoria Agendada',
-    '[Desocupação] Etapa - Vistoria Sem Agendamento',
-    '[Desocupação] Etapa - Vistoria Cancelada',
-    '[Desocupação] Etapa - Vistoria Parcial',
-    '[Desocupação] Etapa - Comparativo da Vistoria',
-    '[Desocupação] Etapa - Vistoria Com Pendência',
-    '[Desocupação] Etapa - Orçamento Aprovado',
-    '[Desocupação] Etapa - Análise de Contestação',
-    '[Desocupação] Etapa - Reparo Estrutural',
-    '[Desocupação] Etapa - Inquilino Irá Executar',
-    '[Desocupação] Etapa - Revistoria',
-    '[Desocupação] Etapa - Revistoria com Pendência',
-    '[Desocupação] Etapa - Roque Serviços',
-    '[Desocupação] Etapa - Imóvel Sem Pendências',
-    '[Desocupação] Etapa - Fechamento',
-    '[Desocupação] Etapa - Envio de Débitos Finais',
-    '[Desocupação] Etapa - Pendente Roque Serviços',
-    '[Desocupação] Etapa - Finalizado Adimplente',
-    '[Desocupação] Etapa - Finalizado Inadimplente',
-    '[Desocupação] Etapa - Desistiu da Desocupação',
-    '[Desocupação] Etapa - Em Acordo'
+    '[Setor] Etapa - X1',
+    '[Setor] Etapa - X2',
+    '[Setor] Etapa - X3',
+    '[Setor] Etapa - X4',
+    '[Setor] Etapa - X5',
+    '[Setor] Etapa - X6',
+    '[Setor] Etapa - X7',
+    '[Setor] Etapa - X8',
+    '[Setor] Etapa - X9',
+    '[Setor] Etapa - X12',
+    '[Setor] Etapa - X13',
+    '[Setor] Etapa - X14',
+    '[Setor] Etapa - X15', 
+    '[Setor] Etapa - X16'
+    '[Setor] Etapa - X17',
+    '[Setor] Etapa - X18',
+    '[Setor] Etapa - X19',
+    '[Setor] Etapa - X20',
+    '[Setor] Etapa - X21',
+    '[Setor] Etapa - X22',
+    '[Setor] Etapa - X23',
+    '[Setor] Etapa - X24',
+    '[Setor] Etapa - X25',
+    '[Setor] Etapa - X26'
 ]
 
 mapa_fases_curtas = {
-    '[Desocupação] Etapa - Orçamento': 'Orçamento',
-    '[Desocupação] Etapa - Orçamento da Revistoria': 'Orçamento da Revistoria',
+    '[Setor] Etapa - X10',
+    '[Setor] Etapa - X11'
 }
 
 def calcular_tempo_na_fase(row, fase_inicio, fases_orcamento, todas_fases):

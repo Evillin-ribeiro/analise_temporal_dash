@@ -3,10 +3,10 @@ from dash import dcc, html, dash_table
 import plotly.graph_objects as go
 
 COLUNAS_TABELA_REPAROS_INQ = [
-    'Código do imóvel',
-    'Contato',
+    '[Setor] Etapa - XX',
+    '[Setor] Etapa - XX',
     'Data_inicio_desocupacao',
-    '[Desocupação] Etapa - Inquilino Irá Executar',
+    '[Setor] Etapa - X18',
     'Data_fim_desocupacao',
     'Finalizado'
 ]
@@ -21,7 +21,7 @@ def criar_layout_reparos_inquilino(df: pd.DataFrame):
     df_f['mes_ano'] = df_f['Data_inicio_desocupacao'].dt.to_period('M')
 
     df_f['inquilino_fez_por_conta'] = (
-        df_f['[Desocupação] Etapa - Inquilino Irá Executar'].notna()
+        df_f['[Setor] Etapa - X18'].notna()
     )
 
     df_f['mes_ano_label'] = (
