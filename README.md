@@ -5,6 +5,7 @@ Dashboard interativo em **Python** para análise operacional e temporal do proce
 
 **Atenção:** Para fins de demonstração, criei uma versão pública e genérica do projeto, com dados fictícios e arquitetura completa, não representam dados reais neste repositório.
 ---
+
 ###### Funcionalidades Principais:
 
 A aplicação conta com:
