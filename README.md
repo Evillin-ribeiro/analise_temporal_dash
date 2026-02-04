@@ -1,26 +1,21 @@
 
 ##### Análise Temporal Dashboard
 
-Dashboard interativo em **Python** para análise operacional e temporal do processo de imóveis cadastrados em um sistema interno da empresa. Foi construído com **Dash**, **Plotly** e **Flask**, com suporte a **Docker**.  A aplicação transforma dados operacionais brutos (Excel) em **indicadores estratégicos**, reduzindo esforço manual, padronizando métricas e aumentando a confiabilidade das análises.
+Dashboard interativo em **Python** para análise operacional e temporal do processo de imóveis cadastrados em um sistema interno da empresa. Foi construído com **Dash**, **Plotly** e **Flask**, com suporte a **Docker**.  A aplicação transforma dados operacionais brutos (Excel) em **indicadores estratégicos**, reduzindo esforço manual, padronizando métricas e aumentando a confiabilidade das análises. Desenvolvido em uma aplicação web única, modular e integrada, empacotada e executada em containers Docker, garantindo portabilidade, padronização do ambiente e facilidade de deploy. A aplicação executada internamente em um ambiente de máquina virtual Linux.
 
+**Atenção:** Para fins de demonstração, criei uma versão pública e genérica do projeto, com dados fictícios e arquitetura completa, não representam dados reais neste repositório.
 ---
-##### Projeto
-Este projeto tem como objetivo automatizar o fluxo de análise de relatórios de um setor no ramo imobiliário, reduzindo atividades manuais e padronizando o tratamento dos dados. O desenvolvimento é realizado em Python, com foco na transformação de dados operacionais brutos em indicadores estratégicos, aumentando a confiabilidade e agilidade das análises. Originalmente desenvolvido em Jupyter Lab, o projeto evoluiu para uma aplicação web única, modular e integrada, empacotada e executada em containers Docker, garantindo portabilidade, padronização do ambiente e facilidade de deploy. A aplicação executada internamente em um ambiente de máquina virtual Linux.
+###### Funcionalidades Principais:
 
-**Funcionalidades Principais:**
 A aplicação conta com:
-- Tela de login personalizada e controle de acesso por usuário
-- Upload seguro de arquivos Excel com limite de tamanho, processando os dados sem armazenar informações sensíveis no repositório
-- Menu de navegação centralizado, com abas interativas para diferentes análises
+- Tela de login personalizada e controle de acesso por usuário.
+- Upload seguro de arquivos Excel com limite de tamanho, processando os dados sem armazenar informações sensíveis.
+- Menu de navegação centralizado, com abas interativas para diferentes análises.
 - Visualização de gráficos interativos usando Plotly
 - Processamento automático das etapas do processo, cálculo de tempos e indicadores chave.
 - Armazenamento seguro de sessões e dados temporários, evitando vazamento de informações sensíveis. 
-- Tabelas interativas com os gráficos
-- Exportação do arquivo para .xlsx
-
-**Atenção:**  
-Os nomes de colunas refletem fluxos internos do processo de desocupação e **não representam dados reais** neste repositório.  
-Este script processa dados internos contendo **informações operacionais e dados pessoais** (ex.: contatos), devendo ser executado **apenas em ambiente controlado e não público**.
+- Tabelas interativas com os gráficos.
+- Exportação do arquivo para .xlsx.
 
 ---
 ##### Estrutura  
