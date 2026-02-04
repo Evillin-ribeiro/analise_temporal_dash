@@ -4,9 +4,10 @@
 Dashboard interativo em **Python** para análise operacional e temporal do processo de imóveis cadastrados em um sistema interno da empresa. Foi construído com **Dash**, **Plotly** e **Flask**, com suporte a **Docker**.  A aplicação transforma dados operacionais brutos (Excel) em **indicadores estratégicos**, reduzindo esforço manual, padronizando métricas e aumentando a confiabilidade das análises. Desenvolvido em uma aplicação web única, modular e integrada, empacotada e executada em containers Docker, garantindo portabilidade, padronização do ambiente e facilidade de deploy. A aplicação executada internamente em um ambiente de máquina virtual Linux.
 
 **Atenção:** Para fins de demonstração, criei uma versão pública e genérica do projeto, com dados fictícios e arquitetura completa, não representam dados reais neste repositório.
+
 ---
 
-###### Funcionalidades Principais:
+##### Funcionalidades Principais:
 
 A aplicação conta com:
 - Tela de login personalizada e controle de acesso por usuário.
